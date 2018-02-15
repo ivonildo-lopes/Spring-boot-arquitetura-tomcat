@@ -11,5 +11,11 @@ public interface ClienteService {
 	
 	public Cliente findById(Integer id);
 	
+	public Cliente save(Cliente cliente);
+
+	public Cliente update(Cliente cliente);
+
+	public void delete(Cliente cli);
+	
 	
 }

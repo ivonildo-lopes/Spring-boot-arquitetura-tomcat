@@ -18,12 +18,27 @@ public class ClienteServiceImpl implements ClienteService {
 
 	@Override
 	public List<Cliente> findAll() {
-		return this.repository.findAll();
+		return (List<Cliente>) this.repository.findAll();
 	}
 
 	@Override
 	public Cliente findById(Integer id) {
 		return this.repository.findOne(id);
+	}
+
+	@Override
+	public Cliente save(Cliente cliente) {
+		return this.repository.save(cliente);
+	}
+
+	@Override
+	public Cliente update(Cliente cliente) {
+		return this.repository.saveAndFlush(cliente);
+	}
+
+	@Override
+	public void delete(Cliente cli) {
+		this.repository.delete(cli);
 	}
 	
 	
